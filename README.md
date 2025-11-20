@@ -43,7 +43,7 @@ return {
 }
 ```
       
-🚀 Usage
+ ## 🚀 Usage
 
 The plugin offers a Lua function and a Neovim command to control the mode.
 
