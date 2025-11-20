@@ -4,7 +4,7 @@
 
 `prackeys` is a simple Neovim plugin that allows you to easily toggle the functionality of the arrow keys (`<Up>`, `<Down>`, `<Left>`, `<Right>`) across Normal, Insert, and Visual modes, remapping them to `<Nop>` (no operation) when the mode is active.
 
-This is useful for intermediate users who want to reinforce moving exclusively with the home row keys (`h`/`j`/`k`/`l`) without relying on the arrow keys.
+This is useful for both beinners and intermediate users who want to reinforce moving exclusively with the home row keys (`h`/`j`/`k`/`l`) without relying on the arrow keys.
 
 ## ✨ Features
 
