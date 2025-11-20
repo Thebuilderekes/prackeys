@@ -1,4 +1,4 @@
-# prackeys
+# Prackeys
 
 **Encourage better Vim habits by enforcing movement keys (`h`/`j`/`k`/`l`).**
 
@@ -41,6 +41,46 @@ return {
     },
   },
 }
+```
+
+### packer.nvim
+```
+-- Requires: 'Thebuilderekes/prackeys'
+use {
+    'Thebuilderekes/prackeys', -- Replace 'Thebuilderekes' 
+
+    -- 1. Configuration: Call the setup function when the plugin is loaded
+    config = function()
+        require('prackeys').setup()
+    end,
+
+    -- 2. Mapping: Define the keybind that calls the toggle function
+    -- This ensures the keymap is set up after the plugin is available.
+    run = function()
+        vim.keymap.set('n', '<leader>pm', function()
+            -- Call the specific exported function to toggle the state
+            require('prackeys').toggle_arrows()
+        end, { desc = "Toggle Nvim Practice Mode (Arrow Keys Off/On)" })
+    end
+}
+```
+
+### vim-plug
+```
+" In your init.vim file, inside the call plug#begin() ... plug#end() block
+
+" 1. Install the plugin
+Plug 'Thebuilderekes/prackeys'
+
+" 2. Configuration and Mapping (Use VimEnter to ensure the plugin is loaded)
+augroup PrackeysSetup
+    autocmd!
+    " Call the setup function to define the :PracticeToggle command
+    autocmd VimEnter * lua require('prackeys').setup()
+
+    " Set the key mapping in Normal mode
+    autocmd VimEnter * lua vim.keymap.set('n', '<leader>pm', function() require('prackeys').toggle_arrows() end, { desc = "Toggle Nvim Practice Mode (Arrow Keys Off/On)" })
+augroup END
 ```
       
  ## 🚀 Usage
