@@ -49,4 +49,4 @@ The plugin offers a Lua function and a Neovim command to control the mode.
 
 You can run the built-in command at any time:
 
-:PracticeToggle or <Leader>pm
+:PracticeToggle or ``<Leader>pm``
