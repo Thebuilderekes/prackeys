@@ -65,24 +65,7 @@ use {
 }
 ```
 
-### vim-plug
-```
-" In your init.vim file, inside the call plug#begin() ... plug#end() block
 
-" 1. Install the plugin
-Plug 'Thebuilderekes/prackeys'
-
-" 2. Configuration and Mapping (Use VimEnter to ensure the plugin is loaded)
-augroup PrackeysSetup
-    autocmd!
-    " Call the setup function to define the :PracticeToggle command
-    autocmd VimEnter * lua require('prackeys').setup()
-
-    " Set the key mapping in Normal mode
-    autocmd VimEnter * lua vim.keymap.set('n', '<leader>pm', function() require('prackeys').toggle_arrows() end, { desc = "Toggle Nvim Practice Mode (Arrow Keys Off/On)" })
-augroup END
-```
-      
  ## 🚀 Usage
 
 The plugin offers a Lua function and a Neovim command to control the mode.
